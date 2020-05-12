@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: kltduong/auth
+          image: us.gcr.io/ticketing-dev-277010/auth
 
 ---
 apiVersion: v1
