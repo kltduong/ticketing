@@ -7,8 +7,6 @@ deploy:
 build:
   local:
     push: false
-  googleCloudBuild:
-    projectId: ticketing-dev-277010
   artifacts:
     - image: kltduong/auth
       context: auth
@@ -17,4 +15,12 @@ build:
       sync:
         manual:
           - src: "src/**/*.ts"
+            dest: .
+    - image: kltduong/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "**/*.js"
             dest: .
